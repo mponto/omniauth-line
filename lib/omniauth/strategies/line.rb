@@ -5,7 +5,7 @@ module OmniAuth
   module Strategies
     class Line < OmniAuth::Strategies::OAuth2
       option :name, 'line'
-      option :scope, 'profile test'
+      option :scope, 'profile openid'
 
       option :client_options, {
         site: 'https://access.line.me',
@@ -18,7 +18,7 @@ module OmniAuth
           client_id: options['client_id'],
           response_type: 'code',
           scopes: (options['scope']),
-          bot_prompt: 'normal'
+          bot_prompt: 'aggressive'
         }
 
         super
