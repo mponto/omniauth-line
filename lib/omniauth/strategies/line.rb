@@ -13,13 +13,14 @@ module OmniAuth
         authorize_url: '/oauth2/v2.1/authorize',
         token_url: '/oauth2/v2.1/token'
       }
-      
+
       def request_phase
         options[:authorize_params] = {
           client_id: options['client_id'],
           response_type: 'code',
           scopes: (options['scope']),
-          bot_prompt: 'aggressive'
+          bot_prompt: 'aggressive',
+          prompt: 'consent'
         }
 
         super
