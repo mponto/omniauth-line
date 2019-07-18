@@ -19,7 +19,7 @@ module OmniAuth
           client_id: options['client_id'],
           response_type: 'code',
           scopes: (options['scope']),
-          bot_prompt: 'aggressive',
+          bot_prompt: options['bot_prompt'],
           prompt: 'consent'
         }
 
